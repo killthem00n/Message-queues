@@ -99,12 +99,12 @@ int main(void)
 	key_t key_chat;
 	
 	if ((key_outcome = ftok(PATH, 33)) < 0){									//generate key	
-		perror("ftok_income");
+		perror("ftok: outcome");
 		exit(1);
 	}
 	
 	if ((mq_outcome = msgget(key_outcome, 0)) < 0){									//create mq for all outcoming messages
-		perror("mq_income");
+		perror("msgget: outcome");
 		exit(1);
 	}
 	
